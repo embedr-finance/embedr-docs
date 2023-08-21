@@ -31,7 +31,7 @@ Let's take a look at each of these functions in more detail.
 
 ### Opening a Kasa
 
-Opening a Kasa is the process of minting rUSD by depositing collateral. In order to use Embedr's products, a single user needs to have a Kasa registered in the protocol.
+Opening a Kasa is the process of minting rUSD by depositing collateral. In order to use EMBEDr's products, a single user needs to have a Kasa registered in the protocol.
 
 Users can open a Kasa by providing some amount of collateral to the protocol. The valid amounts for `COLLATERAL_TOKEN` and `rUSD` are based on the collateral ratio of the Kasa.
 
@@ -85,30 +85,30 @@ When all of the debt in Kasa is repaid, the Kasa will be closed and the remainin
 
 ### Liquidating Kasa(s)
 
-Liquidation is the process of closing a Kasa that has fallen below the minimum collateral ratio. Liquidation can be initiated by both users and Embedr Protocol.
+Liquidation is the process of closing a Kasa that has fallen below the minimum collateral ratio. Liquidation can be initiated by both users and EMBEDr Protocol.
 
-Liquidated Kasas are closed and their collateral and debt are distributed to either the Stability Pool or other active Kasas.
+Liquidated Kasas are closed and their collateral and debt are redistributed to either the Stability Pool or other active Kasas.
 
 There are two scenarios that can happen during this process:
 
 - **If Stability Pool can cover Kasa's debt with it's total rUSD stake amount** - Kasa will be closed and all of it's collateral will be sent to stability pool providers as gains.
-- **If Stability Pool cannot cover Kasa's debt** - Kasa will be closed and it's collateral + debt will be distributed to all the other active Kasas.
+- **If Stability Pool cannot cover Kasa's debt** - Kasa will be closed and it's collateral + debt will be redistributed to all the other active Kasas.
 
-#### Stability Pool Distribution
+#### Stability Pool distribution
 
 If Stability Pool is used during the liquidation process, a snapshot of the pool is taken and saved in the protocol to determine each provider's share of the pool.
 
 The amount of collateral gained from the liquidated Kasa is sent to a new contract for providers to claim. This contract will be used to distribute the collateral to the providers based on the snapshot taken during the liquidation process.
 
-#### Active Kasa Distribution
+#### Active Kasa redistribution
 
-If Stability Pool is not used during the liquidation process, all of the collateral and debt of the liquidated Kasa is distributed to all the other active Kasas based on their collateral and debt amounts in the protocol.
+If Stability Pool is not used during the liquidation process, all of the collateral and debt of the liquidated Kasa is redistributed to all the other active Kasas based on their collateral and debt amounts in the protocol.
 
 ### Redeeming rUSD
 
 Redeeming rUSD is the process of exchanging `rUSD` for `COLLATERAL_TOKEN` as if `rUSD` is equal to exactly 1 USD. This means for X amount of `rUSD` - users will get X Dollars worth of `COLLATERAL_TOKEN` in return.
 
-To cover the redeemed `rUSD` amount and send collateral to the user, riskiest Kasas are selected and their collateral + debt is decreased. 
+To cover the redeemed `rUSD` amount and send collateral to the user, riskiest Kasas are selected and their collateral + debt is decreased.
 
 There are two scenarios that can happen during this process:
 
@@ -128,3 +128,32 @@ When the total collateral ratio (TCR) of the protocol falls below **%150**, the 
 During the recovery mode, the protocol will not allow these operations:
 
 - [**Opening a Kasa**](#opening-a-kasa) - users will not be able to open a Kasa if its collateral ratio is below %150.
+- [**Withdrawing Collateral**](#withdrawing-collateral) - users will not be able to withdraw collateral from a Kasa if its collateral ratio drops below %150 after the operation.
+
+### Why is Recovery Mode needed?
+
+The goal of Recovery Mode is to incentivize borrowers to behave in ways that promptly raise the TCR back above 150%, and to incentivize rUSD holders to replenish the Stability Pool.
+
+Economically, Recovery Mode is designed to encourage collateral top-ups and debt repayments, and also itself acts as a self-negating deterrent: the possibility of it occurring actually guides the system away from ever reaching it. Recovery Mode is not a desirable state for the system.
+
+:::info
+During the Recovery Mode, the borrowing fee is set to **0%** to incentivize users to borrow more rUSD - hence increasing the TCR.
+:::
+
+### Liquidations during Recovery Mode
+
+Liquidations work differently during the Recovery Mode. Here is a table that shows the behavior of the protocol during the Recovery Mode:
+
+- **ICR** = Individual Collateral Ratio - the collateral ratio of a single Kasa
+- **MCR** = Minimum Collateral Ratio - the minimum collateral ratio of %110
+- **TCR** = Total Collateral Ratio - the total collateral ratio of the protocol
+- **SP** = Stability Pool - the total rUSD amount in the Stability Pool
+
+| <div style={{width: "160px" }}>Condition</div> | Behaviour |
+| :---: | --- |
+| ICR <= 100% | All collateral and debt is distributed to active Kasas. |
+| 100% < ICR < MCR <br />+<br /> SP > Kasa's Debt | **1-** Stability Pool's rUSD amount is decreased by the same amount as Kasa's debt. <br /> **2-** The Kasa's collateral is shared between Stability Pool providers. |
+| 100% < ICR < MCR <br />+<br /> SP < Kasa's Debt | **1-** All of the available rUSD in Stability Pool is used to pay Kasa's debt. <br /> **2-** A fraction of Kasa's collateral - equal to the ratio of its offset debt to its entire debt - is shared between Stability Pool providers. <br /> **3-** The rest of the collateral and debt is distributed to active Kasas. |
+| MCR <= ICR < 150% <br />+<br /> SP >= Kasa's Debt | **1-** Stability Pool's rUSD amount is decreased by the same amount as Kasa's debt. <br /> **2-** A fraction of collateral with dollar value equal to `1.1 * debt` is shared between Stability Pool providers. <br /> **3-** Nothing is redistributed to other active Kasas. <br /> **4-** Since Kasa's ICR was > 1.1 , the Kasa has a collateral remainder, which is sent to a new contract to be claimed by the borrower. |
+| MCR <= ICR < 150% <br />+<br /> SP < Kasa's Debt | Do nothing. |
+| ICR >= 150% | Do nothing. |

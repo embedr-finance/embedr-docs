@@ -17,6 +17,6 @@ There are five main components to the EMBEDr Protocol:
 2. [Stability Pool](/embedr-protocol/stability-pool)
 3. [EMBD Incentive Token](/embedr-protocol/embd-incentive-token)
 4. [Revenue Farming Pools](/embedr-protocol/revenue-farming-pools)
-5. Robo Yielder
+5. [Robo Yielder](/embedr-protocol/robo-yielder)
 
 This documentation will go over each of these components in detail.

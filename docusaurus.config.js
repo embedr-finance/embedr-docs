@@ -11,7 +11,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://embedrfinance.com',
+  url: 'https://docs.embedr.finance',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -102,10 +102,6 @@ const config = {
             title: 'Social',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
                 href: 'https://discordapp.com/invite/docusaurus',
               },
@@ -125,7 +121,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Embedr Protocol.`,
+        copyright: `Copyright © ${new Date().getFullYear()} EMBEDr.`,
       },
       prism: {
         theme: lightCodeTheme,
