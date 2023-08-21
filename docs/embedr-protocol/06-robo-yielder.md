@@ -5,6 +5,10 @@ title: Robo Yielder
 
 # Robo Yielder
 
+:::info TODO
+### Rewrite this section fully
+:::
+
 Robo Yielder is a system that allows users to use EMBEDr protocol automatically by selecting a risk level.
 
 By using Robo Yielder, users do not need to manually select the best strategy for their assets. Robo Yielder will automatically select the best strategy for the user's assets based on the risk level selected by the user.
@@ -14,9 +18,6 @@ By using Robo Yielder, users do not need to manually select the best strategy fo
 Robo Yielder works by deciding on the best strategy for the user's assets based on the risk level selected by the user. 
 
 To achieve this, Robo Yielder takes into account the following factors:
-
-- // TODO
-- // TODO
 
 After carefully considering these factors, Robo Yielder puts user's assets into use by:
 

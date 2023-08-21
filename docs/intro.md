@@ -8,8 +8,8 @@ title: Introduction
 
 This documentation is made to help you understand EMBEDr and how to use the protocol.
 
-:::danger
-// TODO: THIS PAGE WILL HAVE HIGH LEVEL INFORMATION ABOUT EMBEDR.
+:::info TODO
+### This page will have high level information about EMBEDr.
 :::
 
 ## What is EMBEDr?
