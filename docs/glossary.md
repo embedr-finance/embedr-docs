@@ -1,5 +1,5 @@
 ---
-sidebar_position: 8
+sidebar_position: 7
 title: Glossary
 ---
 
@@ -47,27 +47,27 @@ LBRT is a royalty token within the EMBEDr Protocol. It enables users to exchange
 
 A Kasa is a user account in the EMBEDr Protocol that allows users to interact with the Stable Coin Factory. It is used for minting rUSD, depositing collateral, borrowing rUSD, and other related operations.
 
-## Collateral Ratio
+### Collateral Ratio
 
 Collateral Ratio is the ratio of the value of the collateral deposited in a Kasa to the value of the borrowed rUSD. It is used to determine the minimum collateral required to open a Kasa and maintain its stability.
 
-## Total Collateral Ratio (TCR)
+### Total Collateral Ratio (TCR)
 
 Total Collateral Ratio (TCR) is the ratio of the total value of all collateral in the protocol to the total value of all borrowed rUSD. It is used to monitor the overall stability of the EMBEDr Protocol.
 
-## Stability Pool
+### Stability Pool
 
 Stability Pool is a pool of rUSD that is used to repay debt from liquidated Kasas. It ensures that the total supply of rUSD remains backed and maintains the solvency of the protocol.
 
-## Liquidation
+### Liquidation
 
 Liquidation is the process of selling the collateral of a Kasa to repay its debt. It occurs when the collateral ratio of a Kasa falls below the minimum collateral ratio. The liquidated collateral is distributed to Stability Pool providers as liquidation gains.
 
-## Recovery Mode
+### Recovery Mode
 
 Recovery Mode is a state of the EMBEDr Protocol where the total collateral ratio falls below the %150 threshold.
 
-## Revenue Farming Pools
+### Revenue Farming Pools
 
 Revenue Farming Pools is a decentralized finance mechanism where users can earn yield through revenue sharing by providing liquidity to real-world businesses
 
