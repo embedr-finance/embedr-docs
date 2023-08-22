@@ -58,6 +58,11 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        }
+      },
       navbar: {
         title: 'EMBEDr',
         logo: {
@@ -65,6 +70,16 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
+          {
+            to: '/embedr-for-individuals',
+            label: "For Individuals",
+            position: "left",
+          },
+          {
+            to: '/embedr-for-companies',
+            label: "For Companies",
+            position: "left",
+          },
           {
             to: '/embedr-protocol/overview',
             label: "EMBEDr Protocol",
