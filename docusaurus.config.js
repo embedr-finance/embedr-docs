@@ -96,6 +96,10 @@ const config = {
                 label: 'EMBEDr Protocol',
                 to: '/embedr-protocol/overview',
               },
+              {
+                label: 'How to use?',
+                to: '/how-to-use/embedr-guide',
+              },
             ]
           },
           {

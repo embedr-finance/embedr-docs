@@ -9,7 +9,15 @@ EMBEDr Protocol is a blockchain protocol made to power EMBEDr's vision for merch
 
 This documentation is made for a more technical audience - diving into the details of the protocol and how it works.
 
+:::info TODO
+### Talk about this being a Liquity fork??
+:::
+
 ## Protocol Components
+
+:::info TODO
+### Rethink about the section structure in here.
+:::
 
 There are five main components to the EMBEDr Protocol:
 
