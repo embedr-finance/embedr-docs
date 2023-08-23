@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'EMBEDr',
-  tagline: 'Documentation for EMBEDr',
+  title: 'EMBEDr Finance',
+  tagline: 'Documentation for EMBEDr Finance',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -64,7 +64,7 @@ const config = {
         }
       },
       navbar: {
-        title: 'EMBEDr',
+        title: 'EMBEDr Finance',
         logo: {
           alt: 'EMBEDr Logo',
           src: 'img/logo.svg',
@@ -91,7 +91,12 @@ const config = {
             position: "left",
           },
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://example.com',
+            label: 'Web Application',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/embedr-finance',
             label: 'GitHub',
             position: 'right',
           },
@@ -140,7 +145,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} EMBEDr.`,
+        copyright: `Copyright © ${new Date().getFullYear()} EMBEDr Finance.`,
       },
       prism: {
         theme: lightCodeTheme,
