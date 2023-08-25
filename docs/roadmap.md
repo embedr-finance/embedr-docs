@@ -3,7 +3,7 @@ sidebar_position: 6
 title: Roadmap
 ---
 
-We at EMBEDr are excited to present our roadmap, which outlines our plans and goals for the future.
+We at Embedr are excited to present our roadmap, which outlines our plans and goals for the future.
 
 This document serves as a guide to help you understand the direction we are heading in and the features and improvements we have in store for our users. 
 

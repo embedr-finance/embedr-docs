@@ -5,7 +5,7 @@ title: Stable Coin Factory
 
 # Stable Coin Factory
 
-Stable Coin Factory allow users to mint EMBEDr's native stable coin `rUSD` by depositing `COLLATERAL_TOKEN`.
+Stable Coin Factory allow users to mint Embedr's native stable coin `rUSD` by depositing `COLLATERAL_TOKEN`.
 
 `rUSD` is a algorithmic stable coin that is pegged to the US Dollar.
 
@@ -31,7 +31,7 @@ Let's take a look at each of these functions in more detail.
 
 ### Opening a Kasa
 
-Opening a Kasa is the process of minting rUSD by depositing collateral. In order to use EMBEDr's products, a single user needs to have a Kasa registered in the protocol.
+Opening a Kasa is the process of minting rUSD by depositing collateral. In order to use Embedr's products, a single user needs to have a Kasa registered in the protocol.
 
 Users can open a Kasa by providing some amount of collateral to the protocol. The valid amounts for `COLLATERAL_TOKEN` and `rUSD` are based on the collateral ratio of the Kasa.
 
@@ -85,7 +85,7 @@ When all of the debt in Kasa is repaid, the Kasa will be closed and the remainin
 
 ### Liquidating Kasa(s)
 
-Liquidation is the process of closing a Kasa that has fallen below the minimum collateral ratio. Liquidation can be initiated by both users and EMBEDr Protocol.
+Liquidation is the process of closing a Kasa that has fallen below the minimum collateral ratio. Liquidation can be initiated by both users and Embedr Protocol.
 
 Liquidated Kasas are closed and their collateral and debt are redistributed to either the Stability Pool or other active Kasas.
 

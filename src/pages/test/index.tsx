@@ -3,7 +3,7 @@ import Layout from '@theme/Layout';
 
 export default function Hello() {
   return (
-    <Layout title="Welcome" description="EMBEDr Documentation">
+    <Layout title="Welcome" description="Embedr Documentation">
       <div
         style={{
           display: 'flex',
