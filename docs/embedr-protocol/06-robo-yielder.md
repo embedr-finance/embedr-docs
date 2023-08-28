@@ -26,7 +26,7 @@ After carefully considering these factors, Robo Yielder puts user's assets into 
 
 ## How to use Robo Yielder?
 
-After [opening a Kasa](/embedr-protocol/02-stable-coin-factory#opening-a-kasa), users can use Robo Yielder by selecting a risk level.
+After [opening a Kasa](/embedr-protocol/stable-coin-factory#opening-a-kasa), users can use Robo Yielder by selecting a risk level.
 
 The risk level is divided into 3 levels:
 
